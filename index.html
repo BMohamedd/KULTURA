@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="shortcut icon" type="img/ico" href="/assets/favicon.ico" />
+    <title>KULTURA</title>
+  </head>
+  <body>
+    <video preload="metadata" autoplay id="background-video" muted>
+      <source
+        src="./assets/Sunset in Bali.mp4"
+        id="mp4Source"
+        type="video/mp4"
+      />
+      Please change you browser for a better experiance
+    </video>
+    <div id="blue-overlay"></div>
+    <main>
+      <!-- navbar -->
+      <section id="navigation">
+        <div id="nav-container">
+          <div>
+            <h1 id="logo"><a href="index.html">KULTURA</a></h1>
+          </div>
+          <div id="nav-holder">
+            <h3><a href="./explore.html">Explore</a></h3>
+            <h3>
+              <a
+                href="https://en.wikipedia.org/wiki/Travel_agency"
+                id="Discover"
+                target="_blank"
+                >Discover</a
+              >
+            </h3>
+            <h3><a href="contact.html" id="Contact">Contact</a></h3>
+          </div>
+        </div>
+      </section>
+      <!-- showcase -->
+      <section id="showcase">
+        <div id="showcase-text-holder">
+          <h2 id="hero-text">
+            EXPERIENCE <span id="paradise">LIFE,</span> WITH KULTURA
+          </h2>
+          <p id="lorem-text">
+            The World is such a large and beautiful place, lets visit it
+            together ...
+          </p>
+          <div id="divider"></div>
+          <div id="text-Holder">
+            <div>
+              <h3>Most popular Activity</h3>
+              <p>Sightseeing In Europe</p>
+            </div>
+            <div>
+              <h3>Most Exiting Place</h3>
+              <p>Paris & London</p>
+            </div>
+            <div>
+              <h3>Culture Style</h3>
+              <p>Vintage NetherLands</p>
+            </div>
+          </div>
+        </div>
+        <a href="/explore.html" class="myButton">Discover More!</a>
+      </section>
+      <p id="footer">&copy; <span id="current-year-span"></span>, KULTURA.</p>
+    </main>
+  </body>
+  <script type="text/javascript">
+    let currentIndex = 1;
+    let currentVidLength = 0;
+    let clearIntervalId = "";
+    const backgroundVideo = document.getElementById("background-video");
+    let divider = document.getElementById("divider");
+    backgroundVideo.onloadedmetadata = () => {
+      const times = Math.round((backgroundVideo.duration * 1000) / 80);
+      clearIntervalId = setInterval(() => {
+        const dividerWidth =
+          (currentVidLength * 100) / (backgroundVideo.duration * 1000);
+        divider.style.width = `${dividerWidth}%`;
+        currentVidLength = currentVidLength + 80;
+      }, 80);
+    };
+    const mp4Source = document.getElementById("mp4Source");
+    const currentYear = document.getElementById("current-year-span");
+    const content = [
+      {
+        mainHeader: ["EXPERIENCE", "LIFE", " WITH KULTURA"],
+        sourse: "./assets/Sunset in Bali.mp4",
+        paragraph:
+          "The World is such a large and beautiful place, lets visit it together ...",
+      },
+      {
+        mainHeader: ["WORLD OF", "PARADISE", "GREECE"],
+        sourse: "./assets/A small island.mp4",
+        paragraph:
+          "Greeces a country in Southeast Europe. It is situated on the southern tip of the Balkans, and is located at the crossroads of Europe, Asia, and Africa. Greece shares land borders with Albania to the northwest...",
+      },
+      {
+        mainHeader: ["RELAXED", "SKIING", "ALPS"],
+        sourse: "./assets/Child skiing.mp4",
+        paragraph:
+          "The Alps terrain is vast, extreme, rugged and abrupt compared to the ski mountains in North America. Often lifts and trails in the Alps connect towns and you can literally ski for miles – the ultimate  alpine...",
+      },
+      {
+        mainHeader: ["BEAUTY OF", "NATURE", "ALGERIA"],
+        sourse: "./assets/Volcano beyond the trees.mp4",
+        paragraph:
+          "Belgium, country of northwestern Europe. It is one of the smallest and most densely populated European countries, and it has been, since its independence in 1830,...",
+      },
+    ];
+    backgroundVideo.addEventListener("ended", function (e) {
+      clearInterval(clearIntervalId);
+      currentVidLength = 0;
+      divider.style.width = "0%";
+      // adding the hero text
+      document.getElementById(
+        "hero-text"
+      ).innerHTML = `${content[currentIndex].mainHeader[0]}
+          <span id="paradise">${content[currentIndex].mainHeader[1]},</span>
+          ${content[currentIndex].mainHeader[2]}`;
+      // adding paragraph text
+      document.getElementById("lorem-text").innerHTML =
+        content[currentIndex].paragraph;
+      // changing the clip
+      mp4Source.setAttribute("src", content[currentIndex].sourse);
+      currentIndex === 3 ? (currentIndex = 0) : currentIndex++;
+      backgroundVideo.load();
+      backgroundVideo.play();
+    });
+    currentYear.innerHTML = new Date().getUTCFullYear();
+  </script>
+</html>

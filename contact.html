@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="img/ico" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="contact.css" />
+    <title>Kultura - contact</title>
+  </head>
+  <body>
+    <div id="background-holder">
+      <div id="overlay"></div>
+      <div id="mainHolder">
+        <section id="navigation">
+          <div id="nav-container">
+            <div>
+              <h1 id="logo"><a href="index.html">KULTURA</a></h1>
+            </div>
+            <div id="nav-holder">
+              <h3><a href="./explore.html">Explore</a></h3>
+              <h3>
+                <a
+                  href="https://en.wikipedia.org/wiki/Travel_agency"
+                  id="Discover"
+                  target="_blank"
+                  >Discover</a
+                >
+              </h3>
+              <h3><a href="./contact.html" id="Contact">Contact</a></h3>
+            </div>
+          </div>
+        </section>
+        <main>
+          <div>
+            <h3>About me:</h3>
+            <p>
+              Hey 👋, My name is Mohamed, And I have Built this website using
+              Lots Of Cool Technologies... If you like what you see here or
+              would like to work together
+              <a
+                id="insta-redirect"
+                href="https://www.instagram.com/belhadjm__/"
+                target="_blank"
+                >Click Here</a
+              >
+            </p>
+          </div>
+          <div class="mini-section">
+            <h3>About this Website:</h3>
+            <p>
+              This website was Created for fun and it isn't, nor it will be used
+              for commercial purposes.
+            </p>
+          </div>
+          <div>
+            <h3>Credit:</h3>
+            <p>Project Idea 👉 https://dribbble.com/</p>
+          </div>
+          <p id="footer">
+            &copy; <span id="current-year-span"></span>, KULTURA.
+          </p>
+        </main>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const currentYear = document.getElementById("current-year-span");
+    currentYear.innerHTML = new Date().getUTCFullYear();
+  </script>
+</html>

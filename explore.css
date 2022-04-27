@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/* nav */
+#navigation {
+  position: fixed;
+  z-index: 10;
+  height: 60px;
+  background-color: white;
+  width: 100vw;
+  font-family: "Cairo", sans-serif;
+  border-bottom: 1px solid #000;
+}
+#nav-holder {
+  display: flex;
+  margin-right: 2em;
+}
+#nav-holder > h3 > a {
+  text-decoration: none;
+  color: black;
+  transition: 1s;
+}
+#Discover {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#nav-holder > h3 > a:hover {
+  border-bottom: 1px solid black;
+}
+#nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  color: white;
+  margin-left: 1em;
+  font-size: 2em;
+}
+#logo > a {
+  text-decoration: none;
+  color: black;
+}
+/* hero section */
+main {
+  font-family: "Cairo", sans-serif;
+  position: absolute;
+  top: 60px;
+  width: 100vw;
+}
+#hero-paralax {
+  background: url("./assets/22222.jpg.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 20vh 0px 20vh 0px;
+  background-position: center;
+  background-attachment: fixed;
+}
+#hero-paralax > h1 {
+  text-align: center;
+  font-size: 3em;
+}
+#hero-paralax > h2 {
+  text-align: center;
+}
+.btn {
+  margin-top: 50px;
+  font-size: 1.4em;
+  color: white;
+  text-decoration: none;
+  padding: 5px 30px 5px 30px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0px 3px 26px #ffffff;
+}
+#offer-paragraph {
+  margin-top: 3em;
+  font-size: 20px;
+  font-style: italic;
+}
+#offer-paragraph > p {
+  text-align: center;
+}
+#bestDeals {
+  margin-top: 5em;
+  margin-left: 2em;
+  margin-right: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.dealCard {
+  box-shadow: 0px 3px 15px #000000;
+  width: 400px;
+  max-height: fit-content;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.dealCard > h1,
+.dealCard > p {
+  margin-left: 10px;
+  width: 90%;
+}
+.dealCard:hover {
+  width: 410px;
+}
+
+.dealCard > img {
+  max-width: 100%;
+}
+
+.ggl-btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #2196f3;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+#weTakeCareOf {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  margin-left: 2em;
+  margin-top: 5em;
+  margin-right: 2em;
+}
+#text {
+  max-width: 600px;
+  text-align: center;
+}
+#text > h2 {
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+#svg-holder {
+  width: 500px;
+}
+#svg-holder > img {
+  max-width: 100%;
+}
+#WeAreFriendsWith {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin-left: 2em;
+  margin-top: 10em;
+  margin-bottom: 5em;
+  margin-right: 2em;
+}
+#WeAreFriendsWith > #text {
+  text-decoration: underline;
+}
+
+#friends-img-holder {
+  width: 80vw;
+}
+#friends-img-holder > img {
+  width: 100%;
+}
+/* footer */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 20px;
+  background-color: #333;
+  color: white;
+  padding-bottom: 20px;
+  justify-content: space-evenly;
+  box-shadow: 0px -10px 29px #666666;
+}
+footer > div > p {
+  cursor: pointer;
+}
+/* media */
+@media only screen and (max-width: 800px) {
+  #navigation {
+    height: 95px;
+  }
+  main {
+    top: 95px;
+  }
+  #nav-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #nav-holder {
+    margin: 0;
+  }
+  #logo {
+    margin: 0;
+  }
+}

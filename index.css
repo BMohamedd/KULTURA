@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap");
+
+/* general tags */
+
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: black; */
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* background */
+#background-video {
+  position: absolute;
+  z-index: -100;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: blur(1.5px);
+}
+#blue-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 10;
+  background-color: black;
+  opacity: 30%;
+}
+
+/* main content */
+
+main {
+  color: white;
+  font-family: "Cairo", sans-serif;
+  position: absolute;
+  z-index: 15;
+}
+/* navbar */
+#navigation {
+  width: 100vw;
+}
+#nav-holder {
+  display: flex;
+  margin-right: 2em;
+}
+#nav-holder > h3 > a {
+  text-decoration: none;
+  color: white;
+  transition: 1s;
+}
+#Discover {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#nav-holder > h3 > a:hover {
+  border-bottom: 1px solid white;
+}
+#nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  margin-left: 1em;
+  font-size: 2em;
+}
+#logo > a {
+  text-decoration: none;
+  color: white;
+}
+/* showcase */
+#showcase {
+  width: 40vw;
+  margin-top: 10vh;
+  margin-left: 2em;
+}
+#showcase-text-holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+h2 {
+  width: 100%;
+  line-height: 1em;
+  font-size: 7em;
+}
+#paradise {
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+}
+#lorem-text {
+  width: 100%;
+}
+#divider {
+  width: 10%;
+  border-bottom: 1px solid white;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+#text-Holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* footer */
+#footer {
+  color: #f4f4f4;
+  opacity: 50%;
+  margin-left: 2em;
+  margin-top: 6em;
+}
+
+/* button */
+.myButton {
+  margin-top: 1.5em;
+  background-color: transparent;
+  border-radius: 28px;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 16px 31px;
+  text-decoration: none;
+}
+.myButton:hover {
+  background-color: white;
+  box-shadow: 0px 3px 26px #ffffff;
+  color: black;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+/* media */
+@media only screen and (max-width: 1350px) {
+  h2 {
+    font-size: 5em;
+  }
+  #footer {
+    margin-top: 2em;
+  }
+}
+@media only screen and (max-width: 950px) {
+  h2 {
+    font-size: 5em;
+  }
+  #text-Holder {
+    display: none;
+  }
+  #lorem-text {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #nav-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #nav-holder {
+    margin: 0;
+  }
+  #logo {
+    margin: 0;
+  }
+  #showcase {
+    width: 100vw;
+    margin-left: 0em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #showcase-text-holder {
+    width: 90%;
+  }
+  h2 {
+    line-height: 1em;
+    font-size: 3.5em;
+    text-align: center;
+  }
+  #lorem-text {
+    text-align: center;
+  }
+  #text-Holder {
+    display: none;
+  }
+  .myButton {
+    margin-top: 0;
+  }
+  #footer {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-height: 720px) {
+  h2 {
+    font-size: 3.5em;
+  }
+  #text-Holder {
+    display: none;
+  }
+}
+@media only screen and (max-width: 300px) {
+  #lorem-text {
+    display: none;
+  }
+  .myButton {
+    margin-top: 2em;
+  }
+}
